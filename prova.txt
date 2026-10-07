@@ -1,2 +1,1 @@
-Modifica del file per effettuare il Merge
-
+Testo originale per il conflitto
