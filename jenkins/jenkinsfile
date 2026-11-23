@@ -13,7 +13,7 @@ pipeline {
                 sh 'docker build -t banking-frontend ./Esercitazione_docker_compose/frontend'
             }
         }
-	stages('Build reverse Proxy '){
+	stage('Build reverse Proxy'){
 		steps{ sh 'docker build -t banking-proxy ./Esercitazione_docker_compose/proxy'
 		}
 	}
