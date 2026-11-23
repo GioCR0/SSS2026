@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Backend') {
+            steps {
+                sh 'docker build -t banking-backend ./Esercitazione_docker_compose/backend'
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                sh 'docker build -t banking-frontend ./Esercitazione_docker_compose/frontend'
+            }
+        }
+	stages('Build reverse Proxy '){
+		steps{ sh 'docker build -t banking-proxy ./Esercitazione_docker_compose/proxy'
+		}
+	}
+    }
+}
