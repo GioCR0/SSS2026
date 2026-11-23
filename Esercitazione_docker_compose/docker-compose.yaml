@@ -1,0 +1,18 @@
+services:
+  backend:
+    image: banking-backend
+    expose:
+      - "8000"
+
+  frontend:
+    image: banking-frontend
+    expose:
+      - "4200"
+
+  proxy:
+    image: banking-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend

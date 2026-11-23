@@ -1,0 +1,12 @@
+FROM node:20-alpine
+WORKDIR /app
+
+RUN apk add --no-cache git \
+    && git clone https://github.com/mmenapace/SomeBankingApp.git . \
+    && rm -rf backend .git \
+    && cd frontend && npm install \
+    && apk del git
+WORKDIR /app/frontend
+EXPOSE 4200
+# ENTRYPOINT
+ENTRYPOINT ["npm", "start", "--", "--host", "0.0.0.0"]
