@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git \
     && git clone https://github.com/mmenapace/SomeBankingApp.git . \
     && rm -rf frontend .git \
-    && cd backend && pip install --no-cache-dir -r requirements.txt \
+    && cd backend && pip install --no-cache-dir -r requirements.txt 
 
 WORKDIR /app/backend
 
